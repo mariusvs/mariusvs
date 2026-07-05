@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Steve Tshwete Local Municipality Electrical Engineering Services",
+    "municipality_code": "MP313",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 11.7,
+    "status": "approved",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://highveldchronicle.co.za/articles/steve-tshwete-reduces-tariff-increases-for-most-services-in-202627",
+      "publisher": "Highveld Chronicle",
+      "class": "news"
+    },
+    "notes": "Middelburg. Reduced from the originally proposed 12% for 2026/27."
+  },
+  "tariff_plans": []
+}

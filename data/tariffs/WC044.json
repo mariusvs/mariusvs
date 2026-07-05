@@ -1,0 +1,35 @@
+{
+  "distributor": {
+    "name": "George Municipality Electrotechnical Services",
+    "municipality_code": "WC044",
+    "type": "municipal",
+    "notes": "Uniform 7.88% increase applied to all electricity tariff items from 1 July 2026."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 7.88,
+    "status": "implemented",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://www.georgeherald.com/News/Article/Local-News/electricity-tariffs-increase-by-7-88-from-today-1-july-202607010215", "publisher": "George Herald", "class": "news"},
+    "notes": "Uniform 7.88% on all electricity tariff items implemented 1 July 2026."
+  },
+  "tariff_plans": [
+    {
+      "name": "Residential prepaid",
+      "customer_class": "residential",
+      "metering": "prepaid",
+      "structure": "flat",
+      "vat_treatment": "incl",
+      "verification": "verified",
+      "eligibility": null,
+      "notes": "Rate rose from R3.44 to R3.71 per kWh (+R0.27, 7.88%), VAT-inclusive, effective 1 July 2026.",
+      "components": [
+        {"component_type": "energy", "description": "Prepaid energy charge", "rate": 371.0, "unit": "c/kWh", "block_min_kwh": 0, "block_max_kwh": null, "season": "all", "vat_inclusive": true,
+         "source": {"url": "https://www.georgeherald.com/News/Article/Local-News/electricity-tariffs-increase-by-7-88-from-today-1-july-202607010215", "publisher": "George Herald", "class": "news"},
+         "notes": "R3.71 per kWh incl VAT (was R3.44)"}
+      ],
+      "rules": []
+    }
+  ]
+}

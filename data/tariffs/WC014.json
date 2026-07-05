@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Saldanha Bay Municipality Electrical Engineering Services",
+    "municipality_code": "WC014",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 9.26,
+    "status": "application",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://sbm.gov.za/wp-content/uploads/Pages/Home/2026-27-Electricity-tariff-application-to-NERSA-Saldanha-Bay-municipality.pdf",
+      "publisher": "Saldanha Bay Municipality",
+      "class": "municipality"
+    },
+    "notes": "AS APPLIED FOR to NERSA for 2026/27 (application cites an 8.76% Eskom bulk pass-through); final approved figure not confirmed."
+  },
+  "tariff_plans": []
+}

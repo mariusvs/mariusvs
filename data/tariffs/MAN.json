@@ -1,0 +1,70 @@
+{
+  "distributor": {
+    "name": "CENTLEC (SOC) Ltd",
+    "municipality_code": "MAN",
+    "type": "municipal_entity",
+    "notes": "Electricity distributor for Mangaung Metropolitan Municipality (Bloemfontein) and surrounding municipalities. The centlec.co.za tariffs page still indexed only the 2025/26 schedule at time of capture; 2026/27 c/kWh schedule pending."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 9.9,
+    "status": "approved",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://cceonlinenews.com/investment-finance/nersa-electricity-tariff-increases-2026-what-south-africans-will-pay-from-1-july/", "publisher": "CCE Online News", "class": "news"},
+    "notes": "9.9% per the national 2026/27 NERSA-approval roundup. The widely-quoted 12.4% adjustment was the PREVIOUS year (2025/26) — not applicable to 2026/27."
+  },
+  "tariff_plans": [
+    {
+      "name": "Residential prepaid (non-indigent)",
+      "customer_class": "residential",
+      "metering": "prepaid",
+      "structure": "inclining_block",
+      "vat_treatment": "unknown",
+      "verification": "partial",
+      "eligibility": "Non-indigent residential prepaid customers.",
+      "notes": "NERSA-approved 2026/27 structure introduced a new R50/month basic charge (phased in from a cost-of-supply figure of R527/month; deducted from the first purchase each month) — HOWEVER Mangaung council resolved on 29 June 2026 to DEFER its implementation. Block energy rates (summer/winter) pending the 2026/27 schedule.",
+      "components": [
+        {"component_type": "fixed", "description": "Basic monthly charge, NERSA-approved for 2026/27 — implementation DEFERRED by council resolution of 29 June 2026", "rate": 50.0, "unit": "R/month", "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://www.bloemfonteincourant.co.za/implementation-of-electricity-charge-deferred/", "publisher": "Bloemfontein Courant", "class": "news"},
+         "notes": "Deferred — not being collected at 1 July 2026"},
+        {"component_type": "energy", "description": "Block energy charges (seasonal) — pending 2026/27 schedule (2025/26 blocks do NOT apply)", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": []
+    },
+    {
+      "name": "Business single-phase prepaid",
+      "customer_class": "commercial",
+      "metering": "prepaid",
+      "structure": "flat",
+      "vat_treatment": "unknown",
+      "verification": "partial",
+      "eligibility": "Businesses on single-phase prepaid supply.",
+      "notes": "Energy rate pending 2026/27 schedule.",
+      "components": [
+        {"component_type": "fixed", "description": "Basic monthly charge (NERSA-approved 2026/27 structure)", "rate": 322.11, "unit": "R/month", "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://www.bloemfonteincourant.co.za/centlec-defends-new-prepaid-electricity-charge/", "publisher": "Bloemfontein Courant", "class": "news"}},
+        {"component_type": "energy", "description": "Energy charge — pending 2026/27 schedule", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": []
+    },
+    {
+      "name": "Lifeline / indigent",
+      "customer_class": "residential",
+      "metering": "prepaid",
+      "structure": "inclining_block",
+      "vat_treatment": "unknown",
+      "verification": "partial",
+      "eligibility": "Registered indigent households.",
+      "notes": "Exempt from the R50 basic charge; continue receiving Free Basic Electricity. Energy rates pending 2026/27 schedule.",
+      "components": [
+        {"component_type": "credit", "description": "Exempt from R50/month basic charge; Free Basic Electricity continues", "rate": 0.0, "unit": "R/month", "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://www.bloemfonteincourant.co.za/centlec-defends-new-prepaid-electricity-charge/", "publisher": "Bloemfontein Courant", "class": "news"}},
+        {"component_type": "energy", "description": "Energy charges — pending 2026/27 schedule", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": [
+        {"rule_type": "free_basic", "description": "Free Basic Electricity for registered indigent households (2026/27 quantum pending)", "params": null}
+      ]
+    }
+  ]
+}

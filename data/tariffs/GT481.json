@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Mogale City Local Municipality Electrical Services",
+    "municipality_code": "GT481",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 9.01,
+    "status": "approved",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://www.vfplus.org.za/media-releases/mogale-citys-new-tariffs-will-suffocate-residents/",
+      "publisher": "FF Plus media release",
+      "class": "other"
+    },
+    "notes": "Krugersdorp. 9.01% electricity increase for 2026/27."
+  },
+  "tariff_plans": []
+}

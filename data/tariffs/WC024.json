@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Stellenbosch Municipality Electrical Engineering Services",
+    "municipality_code": "WC024",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 10.7,
+    "status": "proposed",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://www.smfnews.org/stellenbosch-municipality-budget-2026-electricity-tariff-hike/",
+      "publisher": "SMF News",
+      "class": "news"
+    },
+    "notes": "PROPOSED in the draft 2026/27 budget; final NERSA-approved figure not confirmed in accessible sources."
+  },
+  "tariff_plans": []
+}

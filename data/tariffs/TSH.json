@@ -1,0 +1,51 @@
+{
+  "distributor": {
+    "name": "City of Tshwane Energy and Electricity Department",
+    "municipality_code": "TSH",
+    "type": "municipal",
+    "notes": "2026/27 tariff schedule is promulgated in the Gauteng Provincial Gazette (via tshwane.gov.za tariffs page); exact c/kWh values were not machine-readable in this session."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 8.8,
+    "status": "implemented",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://www.tshwane.gov.za/?p=102188", "publisher": "City of Tshwane", "class": "municipality"},
+    "notes": "Electricity selling tariffs +8.8% effective 1 July 2026, part of the approved 2026/27 MTREF (other services: water +10%, sanitation +5%, property rates +5%, refuse +4.1%)."
+  },
+  "tariff_plans": [
+    {
+      "name": "Residential (inclining block, conventional and prepaid)",
+      "customer_class": "residential",
+      "metering": "both",
+      "structure": "inclining_block",
+      "vat_treatment": "unknown",
+      "verification": "unverified",
+      "eligibility": "Network access charge waived for properties valued R250,000 or less and for registered indigent customers.",
+      "notes": "Block structure through 30 June 2026 was 0-100 / 101-400 / 401-650 / >650 kWh. Exact 2026/27 block rates pending the promulgated gazette schedule (2025/26 rates were R2.9790 / R3.4864 / R3.7983 / R4.0948 per kWh excl VAT — do NOT use for 2026/27).",
+      "components": [
+        {"component_type": "energy", "description": "Inclining-block energy charges — exact 2026/27 rates pending promulgated gazette schedule", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false,
+         "notes": "https://www.tshwane.gov.za/?page_id=6924"},
+        {"component_type": "fixed", "description": "Service / network access charge per 30-day period — exact 2026/27 value pending gazette", "rate": null, "unit": "R/month", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": [
+        {"rule_type": "eligibility", "description": "Network access charge free for properties valued ≤ R250,000 and registered indigent customers", "params": {"property_value_max": 250000}}
+      ]
+    },
+    {
+      "name": "Commercial / Industrial / Time-of-Use",
+      "customer_class": "commercial",
+      "metering": "conventional",
+      "structure": "hybrid",
+      "vat_treatment": "unknown",
+      "verification": "unverified",
+      "eligibility": null,
+      "notes": "No 2026/27 commercial, industrial or TOU rates were obtainable from accessible sources; see promulgated gazette schedule.",
+      "components": [
+        {"component_type": "energy", "description": "Energy charges — pending gazette schedule", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": []
+    }
+  ]
+}

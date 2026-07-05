@@ -1,0 +1,122 @@
+{
+  "distributor": {
+    "name": "City of Cape Town Electricity Generation and Distribution",
+    "municipality_code": "CPT",
+    "type": "municipal",
+    "notes": "Tariffs from the 2026/27 Budget Annexure 6 (Electricity Consumptive Tariffs). Rates recorded here EXCLUDE VAT (15%) unless flagged."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 7.5,
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://cceonlinenews.com/investment-finance/nersa-electricity-tariff-increases-2026-what-south-africans-will-pay-from-1-july/", "publisher": "CCE Online News", "class": "news"},
+    "notes": "7.5% residential increase — lowest approved metro increase in SA for 2026/27. City-stated average electricity increase across all tariffs: 6.64%. All verified 2026/27 rates equal exactly 1.075 x the 2025/26 rates."
+  },
+  "tariff_plans": [
+    {
+      "name": "Lifeline",
+      "customer_class": "residential",
+      "metering": "prepaid",
+      "structure": "inclining_block",
+      "vat_treatment": "excl",
+      "verification": "partial",
+      "eligibility": "Subsidised tariff for qualifying low-income households (property value / consumption criteria); includes Free Basic Electricity allocation.",
+      "notes": "Block 2 rate carried a source conflict (one snippet claimed it equals Block 1); the City's own residential-tariff explainer gives 429.48 c/kWh excl VAT and is used here.",
+      "components": [
+        {"component_type": "energy", "description": "Block 1: 0-600 kWh per month", "rate": 246.12, "unit": "c/kWh", "block_min_kwh": 0, "block_max_kwh": 600, "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Electricity%20Consumptive%20Tariffs.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "283.04 c/kWh incl VAT"},
+        {"component_type": "energy", "description": "Block 2: above 600 kWh per month", "rate": 429.48, "unit": "c/kWh", "block_min_kwh": 600, "block_max_kwh": null, "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Procedures,%20guidelines%20and%20regulations/Understanding-residential-electricity-tariffs.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "493.90 c/kWh incl VAT"}
+      ],
+      "rules": [
+        {"rule_type": "inclining_block", "description": "Two blocks split at 600 kWh/month", "params": {"blocks": [[0, 600], [600, null]]}},
+        {"rule_type": "free_basic", "description": "Qualifying Lifeline customers receive Free Basic Electricity (up to 60 kWh/month depending on consumption)", "params": null}
+      ]
+    },
+    {
+      "name": "Domestic",
+      "customer_class": "residential",
+      "metering": "both",
+      "structure": "inclining_block",
+      "vat_treatment": "excl",
+      "verification": "verified",
+      "eligibility": "Standard residential tariff for households not on Home User or Lifeline.",
+      "notes": "Both blocks cross-check exactly between excl and incl VAT figures in official City documents.",
+      "components": [
+        {"component_type": "energy", "description": "Block 1: 0-600 kWh per month", "rate": 359.82, "unit": "c/kWh", "block_min_kwh": 0, "block_max_kwh": 600, "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Budget-2026-27_Ann06-25-ElectricityGenerationandDistribution-ConsumptionandGeneration.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "413.79 c/kWh incl VAT"},
+        {"component_type": "energy", "description": "Block 2: above 600 kWh per month", "rate": 429.48, "unit": "c/kWh", "block_min_kwh": 600, "block_max_kwh": null, "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Budget-2026-27_Ann06-25-ElectricityGenerationandDistribution-ConsumptionandGeneration.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "493.90 c/kWh incl VAT"}
+      ],
+      "rules": [
+        {"rule_type": "inclining_block", "description": "Two blocks split at 600 kWh/month", "params": {"blocks": [[0, 600], [600, null]]}}
+      ]
+    },
+    {
+      "name": "Home User",
+      "customer_class": "residential",
+      "metering": "both",
+      "structure": "flat",
+      "vat_treatment": "excl",
+      "verification": "partial",
+      "eligibility": "Residential properties above the Lifeline/Domestic qualification thresholds (higher property values).",
+      "notes": "Flat energy rate (no blocks). Service-charge billing period (per day vs per month) could not be confirmed from accessible sources — recorded as R/month per the City's historical billing basis; verify against Annexure 6.",
+      "components": [
+        {"component_type": "energy", "description": "Flat energy charge, all consumption", "rate": 407.88, "unit": "c/kWh", "block_min_kwh": 0, "block_max_kwh": null, "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Electricity%20Consumptive%20Tariffs.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "469.06 c/kWh incl VAT"},
+        {"component_type": "fixed", "description": "Fixed service charge (deducted before units are issued on prepaid)", "rate": 263.51, "unit": "R/month", "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Electricity%20Consumptive%20Tariffs.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "Billing period (day vs month) unconfirmed in accessible sources"}
+      ],
+      "rules": []
+    },
+    {
+      "name": "Residential Time-of-Use",
+      "customer_class": "residential",
+      "metering": "conventional",
+      "structure": "time_of_use",
+      "vat_treatment": "excl",
+      "verification": "partial",
+      "eligibility": "Opt-in; requires AMI (advanced) meter.",
+      "notes": "Peak incl-VAT figure in sources (893.23) is arithmetically inconsistent with 781.07 excl x 1.15 = 898.23; excl-VAT value recorded, flag for verification.",
+      "components": [
+        {"component_type": "energy", "description": "Peak energy (weekdays 07:00-09:00 and 18:00-21:00)", "rate": 781.07, "unit": "c/kWh", "tou_period": "peak", "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Electricity%20Consumptive%20Tariffs.pdf", "publisher": "City of Cape Town", "class": "municipality"}},
+        {"component_type": "energy", "description": "Standard energy", "rate": 321.12, "unit": "c/kWh", "tou_period": "standard", "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Electricity%20Consumptive%20Tariffs.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "369.29 c/kWh incl VAT"},
+        {"component_type": "energy", "description": "Off-peak energy", "rate": 261.69, "unit": "c/kWh", "tou_period": "off_peak", "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Electricity%20Consumptive%20Tariffs.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "300.94 c/kWh incl VAT"}
+      ],
+      "rules": [
+        {"rule_type": "tou_schedule", "description": "Peak: weekdays 07:00-09:00, 18:00-21:00. Standard: weekdays 06:00-07:00, 09:00-18:00, 21:00-22:00; Sat 07:00-12:00, 18:00-20:00; Sun 18:00-20:00. Off-peak: all other times.",
+         "params": {"peak": ["weekdays 07:00-09:00", "weekdays 18:00-21:00"], "standard": ["weekdays 06:00-07:00", "weekdays 09:00-18:00", "weekdays 21:00-22:00", "sat 07:00-12:00", "sat 18:00-20:00", "sun 18:00-20:00"], "off_peak": ["all other times"]}}
+      ]
+    },
+    {
+      "name": "Time of Use (commercial/industrial)",
+      "customer_class": "commercial",
+      "metering": "conventional",
+      "structure": "time_of_use",
+      "vat_treatment": "excl",
+      "verification": "partial",
+      "eligibility": "Commercial/industrial supplies; replaced the Large Power User tariff (discontinued 1 September 2021).",
+      "notes": "Only the network capacity charge was verifiable from accessible sources. Seasonal peak/standard/off-peak energy rates are in Annexure 6 but were not extractable.",
+      "components": [
+        {"component_type": "capacity", "description": "Network capacity charge on Notified Maximum Demand", "rate": 18.28, "unit": "R/kVA", "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://resource.capetown.gov.za/documentcentre/Documents/Financial%20documents/Electricity%20Consumptive%20Tariffs.pdf", "publisher": "City of Cape Town", "class": "municipality"},
+         "notes": "R21.02/kVA incl VAT; billing period assumed monthly"},
+        {"component_type": "energy", "description": "TOU energy charges by period and season — published in Annexure 6, exact 2026/27 values not yet captured", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false,
+         "notes": "NOT FOUND in accessible search content; obtain from Electricity Consumptive Tariffs.pdf"}
+      ],
+      "rules": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "City of Mbombela Electrical Engineering Department",
+    "municipality_code": "MP326",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 10.3,
+    "status": "implemented",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://mylowveld.net/mynews/mbombela-residents/",
+      "publisher": "Lowvelder",
+      "class": "news"
+    },
+    "notes": "Nelspruit. Eskom's 9.01% bulk increase plus a 1.29% municipal addition, effective 1 July 2026."
+  },
+  "tariff_plans": []
+}

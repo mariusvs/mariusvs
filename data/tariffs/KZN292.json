@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "KwaDukuza Local Municipality Electrical Services",
+    "municipality_code": "KZN292",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 10.0,
+    "status": "proposed",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://www.citizen.co.za/north-coast-courier/news-headlines/local-news/2026/05/20/kwadukuza-and-ethekwini-residents-face-some-of-sas-highest-tariff-increases/",
+      "publisher": "North Coast Courier / The Citizen",
+      "class": "news"
+    },
+    "notes": "Stanger/Ballito. PROPOSED: 10% effective 1 July 2026, among the highest in SA; final approved figure not confirmed."
+  },
+  "tariff_plans": []
+}

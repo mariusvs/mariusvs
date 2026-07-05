@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Newcastle Local Municipality Electrical Services",
+    "municipality_code": "KZN252",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 9.0,
+    "status": "proposed",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://newcastillian.com/2026/04/29/newcastle-municipality-tariff-increases-2026-budget/",
+      "publisher": "Newcastillian",
+      "class": "news"
+    },
+    "notes": "PROPOSED: 9% electricity consumption increase in the 2026/27 budget (deliberately limited to ~9.01% although the cost-of-supply study indicated 19.8%); final approved figure not confirmed."
+  },
+  "tariff_plans": []
+}

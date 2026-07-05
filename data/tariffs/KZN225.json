@@ -1,0 +1,49 @@
+{
+  "distributor": {
+    "name": "Msunduzi Local Municipality Electricity Unit",
+    "municipality_code": "KZN225",
+    "type": "municipal",
+    "notes": "Pietermaritzburg. 2026/27 Register of Tariffs and Charges exists (msunduzi.gov.za / marrc.org.za) but line-item rates were not machine-readable this session. Historical register figures are unreliable as a base: NERSA approved 13.32% for 2025/26 (not the drafted schedule), and a Jan 2026 High Court ruling ordered NERSA to re-determine Msunduzi's disputed 2024/25 tariffs."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 9.26,
+    "status": "approved",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://witness.co.za/news/2026/05/29/msunduzi-tariff-hike/", "publisher": "The Witness", "class": "news"},
+    "notes": "Council approved 29 May 2026; municipality states NERSA approved its 9.26% application. Exceeds the Eskom bulk increase via a cost-plus infrastructure markup; the local Chamber of Business disputed the underlying cost-of-supply study."
+  },
+  "tariff_plans": [
+    {
+      "name": "Domestic Scale A.I — single-phase supplies (20A-80A)",
+      "customer_class": "residential",
+      "metering": "both",
+      "structure": "flat",
+      "vat_treatment": "unknown",
+      "verification": "unverified",
+      "eligibility": null,
+      "notes": "Exact 2026/27 c/kWh pending the Register of Tariffs and Charges.",
+      "components": [
+        {"component_type": "energy", "description": "Domestic single-phase energy charge — pending 2026/27 register", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": [
+        {"rule_type": "connection_limit", "description": "Single-phase supplies 20A to 80A", "params": {"min_amp": 20, "max_amp": 80}}
+      ]
+    },
+    {
+      "name": "Commercial / Business & General",
+      "customer_class": "commercial",
+      "metering": "both",
+      "structure": "hybrid",
+      "vat_treatment": "unknown",
+      "verification": "unverified",
+      "eligibility": null,
+      "notes": "Rates pending 2026/27 register.",
+      "components": [
+        {"component_type": "energy", "description": "Commercial energy charge — pending 2026/27 register", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": []
+    }
+  ]
+}

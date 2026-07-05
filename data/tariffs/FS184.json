@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Matjhabeng Local Municipality Electrical Services",
+    "municipality_code": "FS184",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 23.0,
+    "status": "proposed",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://fs.da.org.za/2026/04/da-rejects-reckless-anc-led-matjhabeng-tariff-hikes-that-punish-residents-and-businesses",
+      "publisher": "DA Free State media release",
+      "class": "other"
+    },
+    "notes": "Welkom. PROPOSED 23% (vs the 9.01% NERSA guideline); formally objected to at NERSA (objections closed 20 May 2026). NO final approved figure found — do NOT treat 23% as approved."
+  },
+  "tariff_plans": []
+}

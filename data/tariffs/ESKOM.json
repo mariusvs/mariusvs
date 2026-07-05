@@ -1,0 +1,18 @@
+{
+  "distributor": {
+    "name": "Eskom Holdings SOC Ltd (direct-supply and municipal bulk)",
+    "municipality_code": null,
+    "type": "national_utility",
+    "notes": "Many municipalities (and large parts of others) are supplied directly by Eskom rather than a municipal distributor — Eskom's own NERSA-approved tariffs apply there. Eskom also sells bulk to municipal distributors (Municrate SPU, Municflex LPU, Public Lighting)."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27 (municipal bulk, 1 Jul 2026 - 30 Jun 2027)",
+    "avg_increase_pct": 9.01,
+    "status": "implemented",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://www.eskom.co.za/distribution/2026-2027-tariff-increase/", "publisher": "Eskom", "class": "utility"},
+    "notes": "Eskom municipal bulk purchase prices +9.01% effective 1 July 2026 (NERSA determination, 10 March 2026). Eskom DIRECT customers: +8.76% from 1 April 2026 (NERSA approved March 2026; 8.83% approved for the following year). Generation Capacity Charge fixed portion raised from 20% (FY2026) to 30% (FY2027). NERSA national Free Basic Electricity rate for 2026/27: 238.60 c/kWh."
+  },
+  "tariff_plans": []
+}

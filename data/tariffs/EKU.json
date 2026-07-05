@@ -1,0 +1,103 @@
+{
+  "distributor": {
+    "name": "City of Ekurhuleni Energy Department",
+    "municipality_code": "EKU",
+    "type": "municipal",
+    "notes": "2026/27 Schedule 2 of Electricity Tariffs (1 Jul 2026 - 30 Jun 2027) states all tariffs EXCLUDE VAT. Major structural changes for 2026/27: residential inclining block tariff abolished in favour of a flat rate above 50 kWh."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 8.76,
+    "status": "implemented",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://www.ekurhuleni.gov.za/press-releases/public-notice/new-ekurhuleni-tariffs-effective-from-1-july-2026/", "publisher": "City of Ekurhuleni", "class": "municipality"},
+    "notes": "City press release: electricity +8.76% (Eskom Municflex-linked Tariffs I, J and G); all other tariffs up to +9.01% based on usage. CONFLICT: The Citizen/CCE national roundup reported 12.7% for Ekurhuleni, a figure under legal/regulatory scrutiny (industrial users allege inflated calculations, per Moneyweb); the city's own 8.76% figure is recorded here."
+  },
+  "tariff_plans": [
+    {
+      "name": "Tariff A.1 — Residential indigent / deemed indigent (lifeline)",
+      "code": "A.1",
+      "customer_class": "residential",
+      "metering": "prepaid",
+      "structure": "flat",
+      "vat_treatment": "excl",
+      "verification": "partial",
+      "eligibility": "Registered / deemed indigent households.",
+      "notes": "No basic monthly charge on this tariff. Energy rate above the free 50 kWh pending Schedule 2 PDF extraction.",
+      "components": [
+        {"component_type": "credit", "description": "Free Basic Electricity: 50 kWh free per month", "rate": 50.0, "unit": "kWh/month free", "block_min_kwh": 0, "block_max_kwh": 50, "season": "all", "vat_inclusive": false,
+         "source": {"url": "https://www.ekurhuleni.gov.za/wp-content/uploads/2026/03/Schedule-2-of-Electricity-Tariffs-2026-27-draft-v.11.03.26.pdf", "publisher": "City of Ekurhuleni", "class": "municipality"}},
+        {"component_type": "energy", "description": "Energy charge above 50 kWh — exact 2026/27 rate pending Schedule 2", "rate": null, "unit": "R/kWh", "block_min_kwh": 50, "block_max_kwh": null, "season": "all", "vat_inclusive": false}
+      ],
+      "rules": [
+        {"rule_type": "free_basic", "description": "50 kWh FBE per month; no basic charge", "params": {"kwh": 50}}
+      ]
+    },
+    {
+      "name": "Tariff A.2 — Residential non-indigent (conventional and prepaid incl. IMMS)",
+      "code": "A.2",
+      "customer_class": "residential",
+      "metering": "both",
+      "structure": "flat",
+      "vat_treatment": "excl",
+      "verification": "partial",
+      "eligibility": "Non-indigent residential customers.",
+      "notes": "Converted from inclining block tariff to a single flat rate for all units above 50 kWh; no basic charge linked to this tariff. Schedule splits A.2.1 High Demand Season (Jun-Aug) and A.2.2 Low Demand Season (Sep-May). An unverified search summary quoted R3.0635/kWh for both seasons — excluded pending confirmation. 2025/26 comparators (NOT 2026/27): IBT R3.25 (0-600), R5.08 (600-700), R13.16 (>700).",
+      "components": [
+        {"component_type": "energy", "description": "Flat energy charge, high demand season (Jun-Aug) — exact 2026/27 rate pending Schedule 2", "rate": null, "unit": "R/kWh", "block_min_kwh": 50, "block_max_kwh": null, "season": "high", "vat_inclusive": false},
+        {"component_type": "energy", "description": "Flat energy charge, low demand season (Sep-May) — exact 2026/27 rate pending Schedule 2", "rate": null, "unit": "R/kWh", "block_min_kwh": 50, "block_max_kwh": null, "season": "low", "vat_inclusive": false}
+      ],
+      "rules": [
+        {"rule_type": "season_definition", "description": "High demand season June-August; low demand season September-May", "params": {"high": ["Jun", "Jul", "Aug"], "low": ["Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"]}},
+        {"rule_type": "other", "description": "Prepaid conversions / new connections receive a once-off 40 kWh allocation", "params": {"kwh": 40}}
+      ]
+    },
+    {
+      "name": "Tariff B — Residential resellers",
+      "code": "B",
+      "customer_class": "resale",
+      "metering": "conventional",
+      "structure": "flat",
+      "vat_treatment": "excl",
+      "verification": "partial",
+      "eligibility": "Residential resellers (body corporates, landlords).",
+      "notes": "Reverted for 2026/27 to a basic charge plus flat kWh rate across all seasons and TOU periods; demand and network access charge components removed. Rand amounts pending Schedule 2.",
+      "components": [
+        {"component_type": "fixed", "description": "Basic monthly charge — exact 2026/27 value pending Schedule 2", "rate": null, "unit": "R/month", "season": "all", "vat_inclusive": false},
+        {"component_type": "energy", "description": "Flat energy charge, all seasons/TOU periods — exact 2026/27 value pending Schedule 2", "rate": null, "unit": "R/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": []
+    },
+    {
+      "name": "Tariffs I, J, G — Large power users / TOU (Eskom Municflex-linked)",
+      "code": "I/J/G",
+      "customer_class": "industrial",
+      "metering": "conventional",
+      "structure": "time_of_use",
+      "vat_treatment": "excl",
+      "verification": "partial",
+      "eligibility": "Large power users.",
+      "notes": "Increased 8.76%, linked to Eskom Municflex. TOU period/season rates pending Schedule 2.",
+      "components": [
+        {"component_type": "energy", "description": "TOU energy charges — exact 2026/27 rates pending Schedule 2", "rate": null, "unit": "R/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": []
+    },
+    {
+      "name": "Tariff C — Commercial",
+      "code": "C",
+      "customer_class": "commercial",
+      "metering": "both",
+      "structure": "hybrid",
+      "vat_treatment": "excl",
+      "verification": "unverified",
+      "eligibility": null,
+      "notes": "Non-Municflex tariffs increased by up to 9.01% based on usage; exact 2026/27 rates pending Schedule 2.",
+      "components": [
+        {"component_type": "energy", "description": "Energy charges — pending Schedule 2", "rate": null, "unit": "R/kWh", "season": "all", "vat_inclusive": false}
+      ],
+      "rules": []
+    }
+  ]
+}

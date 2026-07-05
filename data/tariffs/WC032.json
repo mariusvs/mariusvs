@@ -1,0 +1,43 @@
+{
+  "distributor": {
+    "name": "Overstrand Municipality Electricity Department",
+    "municipality_code": "WC032",
+    "type": "municipal",
+    "notes": "Hermanus. Prepaid inclining-block rates published by the municipality, VAT-inclusive, effective 1 July 2026."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 8.5,
+    "status": "implemented",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://www.overstrand.gov.za/have-your-say-proposed-8-5-electricity-tariff-increase-for-2026-27/", "publisher": "Overstrand Municipality", "class": "municipality"},
+    "notes": "8.5% effective 1 July 2026, following NERSA's approval of the 9.01% Eskom bulk increase."
+  },
+  "tariff_plans": [
+    {
+      "name": "Residential prepaid (inclining block)",
+      "customer_class": "residential",
+      "metering": "prepaid",
+      "structure": "inclining_block",
+      "vat_treatment": "incl",
+      "verification": "verified",
+      "eligibility": null,
+      "notes": "Published by the municipality as new prepaid tariffs effective 1 July 2026, VAT-inclusive.",
+      "components": [
+        {"component_type": "energy", "description": "Block 1: 0-350 units per month", "rate": 288.19, "unit": "c/kWh", "block_min_kwh": 0, "block_max_kwh": 350, "season": "all", "vat_inclusive": true,
+         "source": {"url": "https://www.overstrand.gov.za/new-prepaid-electricity-tariffs/", "publisher": "Overstrand Municipality", "class": "municipality"},
+         "notes": "R2.8819 per unit incl VAT"},
+        {"component_type": "energy", "description": "Block 2: 351-600 units per month", "rate": 322.32, "unit": "c/kWh", "block_min_kwh": 350, "block_max_kwh": 600, "season": "all", "vat_inclusive": true,
+         "source": {"url": "https://www.overstrand.gov.za/new-prepaid-electricity-tariffs/", "publisher": "Overstrand Municipality", "class": "municipality"},
+         "notes": "R3.2232 per unit incl VAT"},
+        {"component_type": "energy", "description": "Block 3: 601+ units per month", "rate": 348.30, "unit": "c/kWh", "block_min_kwh": 600, "block_max_kwh": null, "season": "all", "vat_inclusive": true,
+         "source": {"url": "https://www.overstrand.gov.za/new-prepaid-electricity-tariffs/", "publisher": "Overstrand Municipality", "class": "municipality"},
+         "notes": "R3.4830 per unit incl VAT"}
+      ],
+      "rules": [
+        {"rule_type": "inclining_block", "description": "Three blocks: 0-350, 351-600, 601+ units/month", "params": {"blocks": [[0, 350], [350, 600], [600, null]]}}
+      ]
+    }
+  ]
+}

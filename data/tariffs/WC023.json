@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Drakenstein Municipality Electro-Technical Services",
+    "municipality_code": "WC023",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 6.3,
+    "status": "proposed",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://infrastructurenews.co.za/2026/03/16/drakenstein-municipality-votes-for-public-participation-on-2026-27-electricity-tariffs-not-eskoms-proposed-9-01-tariff-hike/",
+      "publisher": "Infrastructure News",
+      "class": "news"
+    },
+    "notes": "Paarl. PROPOSED: council voted 13 March 2026 to take a 6.3% increase (per its own cost-of-supply study, rejecting a 9.01% pass-through) to public participation; final NERSA-approved figure not confirmed in accessible sources."
+  },
+  "tariff_plans": []
+}

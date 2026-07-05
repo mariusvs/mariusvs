@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Polokwane Local Municipality Energy Services",
+    "municipality_code": "LIM354",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 9.01,
+    "status": "approved",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://www.citizen.co.za/review-online/news-headlines/local-news/2026/04/08/polokwane-residents-face-water-electricity-tariff-hikes-from-july/",
+      "publisher": "Review Online / The Citizen",
+      "class": "news"
+    },
+    "notes": "Budget and tariffs adopted 29 May 2026, effective 1 July 2026; 9.01% subject to NERSA finalisation."
+  },
+  "tariff_plans": []
+}

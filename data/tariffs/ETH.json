@@ -1,0 +1,96 @@
+{
+  "distributor": {
+    "name": "eThekwini Municipality Electricity Unit",
+    "municipality_code": "ETH",
+    "type": "municipal",
+    "notes": "eThekwini uses single flat rates per customer class (no inclining blocks) — 'every resident pays the same rate for electricity' (Electricity Tariff Engineer, July 2026). Official 2026/27 rate tables: final-tariff-tables-2026-2027.pdf on durban.gov.za; tariff tables state energy charges c/kWh VAT-inclusive."
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 9.0,
+    "status": "implemented",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {"url": "https://iol.co.za/mercury/news/2026-05-31-ethekwini-ratepayers-here-are-the-new-july-1-tariff-hikes/", "publisher": "IOL / The Mercury", "class": "news"},
+    "notes": "Final 9% adopted in the May 2026 budget, revised down from the 10.5% in the March 2026 draft; implementation from 1 July 2026 confirmed by the Energy Management Directorate."
+  },
+  "tariff_plans": [
+    {
+      "name": "Residential (single rate, credit metered)",
+      "customer_class": "residential",
+      "metering": "conventional",
+      "structure": "flat",
+      "vat_treatment": "incl",
+      "verification": "unverified",
+      "eligibility": "Medium to large residential customers; no fixed service charge.",
+      "notes": "Exact 2026/27 c/kWh pending durban.gov.za final tariff tables.",
+      "components": [
+        {"component_type": "energy", "description": "Flat energy charge — exact 2026/27 rate pending final tariff tables", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": true,
+         "notes": "https://www.durban.gov.za/uploads/0000/13/2026/06/01/final-tariff-tables-2026-2027.pdf"}
+      ],
+      "rules": []
+    },
+    {
+      "name": "Residential Pre-payment (single rate)",
+      "customer_class": "residential",
+      "metering": "prepaid",
+      "structure": "flat",
+      "vat_treatment": "incl",
+      "verification": "unverified",
+      "eligibility": "Small to medium residential customers; no fixed service charge.",
+      "notes": "Exact 2026/27 rate pending final tariff tables (2025/26 reference was R3.77/kWh flat incl VAT — do NOT use for 2026/27).",
+      "components": [
+        {"component_type": "energy", "description": "Flat prepaid energy charge — exact 2026/27 rate pending final tariff tables", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": true}
+      ],
+      "rules": []
+    },
+    {
+      "name": "Low Consumption Pre-payment / Free Basic Electricity (lifeline)",
+      "customer_class": "residential",
+      "metering": "prepaid",
+      "structure": "flat",
+      "vat_treatment": "incl",
+      "verification": "unverified",
+      "eligibility": "Low-consumption customers qualifying for Free Basic Electricity.",
+      "notes": "Structure confirmed in the 2026/27 tariff document; exact rate and FBE allocation pending final tariff tables.",
+      "components": [
+        {"component_type": "energy", "description": "Lifeline prepaid energy charge — pending final tariff tables", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": true}
+      ],
+      "rules": [
+        {"rule_type": "free_basic", "description": "Free Basic Electricity allocation for qualifying low-consumption customers (2026/27 quantum pending)", "params": null}
+      ]
+    },
+    {
+      "name": "Business & General (single rate with fixed service charge)",
+      "customer_class": "commercial",
+      "metering": "both",
+      "structure": "flat",
+      "vat_treatment": "incl",
+      "verification": "unverified",
+      "eligibility": "Commercial and industrial customers; prepaid variant for small-medium businesses (3-phase up to 100A).",
+      "notes": "Fixed charge billed monthly per point of supply. Exact 2026/27 values pending final tariff tables.",
+      "components": [
+        {"component_type": "energy", "description": "Flat energy charge — pending final tariff tables", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": true},
+        {"component_type": "fixed", "description": "Fixed monthly service charge per point of supply — pending final tariff tables", "rate": null, "unit": "R/month", "season": "all", "vat_inclusive": true}
+      ],
+      "rules": []
+    },
+    {
+      "name": "Industrial / bulk demand (NMD ≤100 kVA and >100 kVA, incl. seasonal TOU)",
+      "customer_class": "industrial",
+      "metering": "conventional",
+      "structure": "hybrid",
+      "vat_treatment": "incl",
+      "verification": "unverified",
+      "eligibility": "Business/industrial customers with notified maximum demand; 2% energy-charge rebate for supply voltages above 1000V.",
+      "notes": "Energy charge is flat as well as seasonally differentiated; demand charges in R/kVA. Exact 2026/27 values pending final tariff tables.",
+      "components": [
+        {"component_type": "energy", "description": "Energy charges (flat and seasonally differentiated TOU) — pending final tariff tables", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": true},
+        {"component_type": "demand", "description": "Demand charge — pending final tariff tables", "rate": null, "unit": "R/kVA", "season": "all", "vat_inclusive": true}
+      ],
+      "rules": [
+        {"rule_type": "other", "description": "2% rebate on energy charge for supply voltage exceeding 1000V", "params": {"rebate_pct": 2, "voltage_min": "1000V"}}
+      ]
+    }
+  ]
+}

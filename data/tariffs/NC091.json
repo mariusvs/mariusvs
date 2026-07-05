@@ -1,0 +1,22 @@
+{
+  "distributor": {
+    "name": "Sol Plaatje Local Municipality Electricity Department",
+    "municipality_code": "NC091",
+    "type": "municipal",
+    "notes": null
+  },
+  "approved_increase": {
+    "financial_year": "2026/27",
+    "avg_increase_pct": 8.0,
+    "status": "proposed",
+    "effective_from": "2026-07-01",
+    "effective_to": "2027-06-30",
+    "source": {
+      "url": "https://dfa.co.za/diamond-fields-advertiser/news/2026-07-02-sol-plaatje-proposes-lower-electricity-tariff-increase-after-public-backlash/",
+      "publisher": "Diamond Fields Advertiser",
+      "class": "news"
+    },
+    "notes": "Kimberley. PROPOSED (revised after public backlash): 8% with a 2.5% discount for domestic and registered indigent customers; final NERSA position not confirmed."
+  },
+  "tariff_plans": []
+}
