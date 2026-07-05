@@ -38,6 +38,11 @@ on Apple Silicon (arm64) — no Electron, no web views.
 - **Intellisense**: as-you-type completions in the editor — SQL keywords and
   functions plus live table/column names from the connected database
   (Esc opens the popup manually).
+- **Recent tables**: the last 10 tables you SELECTed from (per database,
+  persisted) pop up right after you type `select ` — picking one completes
+  the query to `select * from <table>`. The menu also opens after `from `
+  (inserts the table name) and anytime via **⌘T**; navigate with arrow keys
+  or type to jump, Return inserts.
 
 ## Requirements
 

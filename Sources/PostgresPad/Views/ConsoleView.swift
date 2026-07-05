@@ -13,11 +13,14 @@ struct ConsoleView: View {
     @State private var isRunning = false
     @State private var transactionOpen = false
     @State private var schemaWords: [String] = []
+    @State private var recentTables: [String] = []
 
     var body: some View {
         if let server, let database {
             console(server: server, database: database)
-                .task(id: "\(server.id.uuidString)/\(database)") {
+                .task(id: RecentTablesStore.key(serverID: server.id, database: database)) {
+                    recentTables = RecentTablesStore.shared
+                        .tables(for: RecentTablesStore.key(serverID: server.id, database: database))
                     transactionOpen = await PostgresService.shared
                         .isTransactionOpen(on: server, database: database)
                     schemaWords = (try? await PostgresService.shared
@@ -40,7 +43,8 @@ struct ConsoleView: View {
                 Divider()
                 SQLEditorView(
                     text: $sqlText,
-                    completionWords: SQLCompletions.all + schemaWords
+                    completionWords: SQLCompletions.all + schemaWords,
+                    recentTables: recentTables
                 )
             }
             .frame(minHeight: 140, idealHeight: 220)
@@ -199,6 +203,15 @@ struct ConsoleView: View {
                     on: server,
                     database: database
                 )
+                // Remember the tables this run selected from, for the
+                // recent-tables popup (select …/from …/⌘T).
+                let key = RecentTablesStore.key(serverID: server.id, database: database)
+                for result in results {
+                    if let table = RecentTablesStore.selectedTable(in: result.statement) {
+                        RecentTablesStore.shared.record(table, for: key)
+                    }
+                }
+                recentTables = RecentTablesStore.shared.tables(for: key)
             } catch {
                 results = []
                 errorMessage = describePostgresError(error)
