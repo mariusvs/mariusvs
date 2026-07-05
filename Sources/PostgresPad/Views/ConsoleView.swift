@@ -47,8 +47,7 @@ struct ConsoleView: View {
 
     private func header(server: ServerConfig, database: String) -> some View {
         HStack(spacing: 8) {
-            Image(systemName: "terminal")
-                .foregroundStyle(.secondary)
+            ServerBadgeView(server: server, size: 18)
             Text(server.displayName)
                 .fontWeight(.medium)
             Image(systemName: "chevron.right")

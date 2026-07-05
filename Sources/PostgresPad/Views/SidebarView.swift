@@ -36,17 +36,13 @@ struct SidebarView: View {
     // MARK: - Rows
 
     private func serverRow(for server: ServerConfig) -> some View {
-        HStack(spacing: 6) {
-            Label {
-                VStack(alignment: .leading, spacing: 1) {
-                    Text(server.displayName)
-                    Text("\(server.host):\(String(server.port))")
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                }
-            } icon: {
-                Image(systemName: "server.rack")
-                    .foregroundStyle(store.databases[server.id] != nil ? .green : .secondary)
+        HStack(spacing: 8) {
+            ServerBadgeView(server: server, size: 24)
+            VStack(alignment: .leading, spacing: 1) {
+                Text(server.displayName)
+                Text("\(server.host):\(String(server.port))")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
             }
             Spacer()
             if store.loadingServers.contains(server.id) {
@@ -56,6 +52,11 @@ struct SidebarView: View {
                 Image(systemName: "exclamationmark.triangle.fill")
                     .foregroundStyle(.yellow)
                     .help(error)
+            } else if store.databases[server.id] != nil {
+                Circle()
+                    .fill(.green)
+                    .frame(width: 7, height: 7)
+                    .help("Connected")
             }
         }
         .tag(SidebarSelection.server(server.id))

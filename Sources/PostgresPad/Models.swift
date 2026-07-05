@@ -12,9 +12,35 @@ struct ServerConfig: Identifiable, Codable, Hashable, Sendable {
     /// the other databases on the server.
     var maintenanceDatabase: String = "postgres"
     var useTLS: Bool = false
+    /// SF Symbol and tint shown as the server's logo badge in the sidebar.
+    var symbolName: String = "server.rack"
+    var tintName: String = "blue"
 
     var displayName: String {
         name.isEmpty ? "\(host):\(port)" : name
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, host, port, username, password
+        case maintenanceDatabase, useTLS, symbolName, tintName
+    }
+}
+
+extension ServerConfig {
+    /// Tolerant decoding so server files written by older versions
+    /// (without the badge fields) keep loading.
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        host = try container.decodeIfPresent(String.self, forKey: .host) ?? "localhost"
+        port = try container.decodeIfPresent(Int.self, forKey: .port) ?? 5432
+        username = try container.decodeIfPresent(String.self, forKey: .username) ?? "postgres"
+        password = try container.decodeIfPresent(String.self, forKey: .password) ?? ""
+        maintenanceDatabase = try container.decodeIfPresent(String.self, forKey: .maintenanceDatabase) ?? "postgres"
+        useTLS = try container.decodeIfPresent(Bool.self, forKey: .useTLS) ?? false
+        symbolName = try container.decodeIfPresent(String.self, forKey: .symbolName) ?? "server.rack"
+        tintName = try container.decodeIfPresent(String.self, forKey: .tintName) ?? "blue"
     }
 }
 
