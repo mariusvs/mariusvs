@@ -8,7 +8,7 @@
   "approved_increase": {
     "financial_year": "2026/27",
     "avg_increase_pct": 6.3,
-    "status": "proposed",
+    "status": "approved",
     "effective_from": "2026-07-01",
     "effective_to": "2027-06-30",
     "source": {
@@ -16,7 +16,7 @@
       "publisher": "Infrastructure News",
       "class": "news"
     },
-    "notes": "Paarl. PROPOSED: council voted 13 March 2026 to take a 6.3% increase (per its own cost-of-supply study, rejecting a 9.01% pass-through) to public participation; final NERSA-approved figure not confirmed in accessible sources."
+    "notes": "Paarl. Recheck 2026-07-05: 6.3% average electricity increase RETAINED in the final adopted 2026/27 budget (R4.5bn, delivered 27 May 2026, per official budget documents/Paarl Post) — upgraded from proposed to council-adopted final. NERSA-specific approval of the 6.3% not yet literally confirmed. CAUTION: a Paarl Post article citing 10.32% electricity relates to the PRIOR (2025/26) budget."
   },
   "tariff_plans": []
 }

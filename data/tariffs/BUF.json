@@ -8,11 +8,15 @@
   "approved_increase": {
     "financial_year": "2026/27",
     "avg_increase_pct": 14.0,
-    "status": "approved",
+    "status": "implemented",
     "effective_from": "2026-07-01",
     "effective_to": "2027-06-30",
-    "source": {"url": "https://www.citizen.co.za/news/heres-how-much-more-you-will-be-paying-for-electricity-from-1-july/", "publisher": "The Citizen", "class": "news"},
-    "notes": "Steepest NERSA-approved municipal increase in the country for 2026/27. Draft tariffs went to public comment Nov 2025; council approval Dec 2025; submitted to NERSA before 12 Dec 2025."
+    "source": {
+      "url": "https://www.citizen.co.za/news/heres-how-much-more-you-will-be-paying-for-electricity-from-1-july/",
+      "publisher": "The Citizen",
+      "class": "news"
+    },
+    "notes": "Steepest NERSA-approved municipal increase in the country for 2026/27; re-confirmed in effect from 1 July 2026 (recheck 2026-07-05). R487 prepaid basic charge remains traceable only to draft-stage reporting — no post-approval confirmation found yet. Likely final tariff book: AnnexureF-BCMMtariffBook20March2026.pdf on buffalocity.gov.za."
   },
   "tariff_plans": [
     {
@@ -25,10 +29,28 @@
       "eligibility": null,
       "notes": "Basic charge figure is from BCMM's draft tariff-modelling spreadsheet (Nov 2025 public participation) — final NERSA-approved value not independently confirmed. Energy block rates pending the 2026/27 tariff book.",
       "components": [
-        {"component_type": "fixed", "description": "Basic monthly charge for prepaid domestic consumers (up from R424 in 2025/26) — DRAFT-STAGE figure", "rate": 487.0, "unit": "R/month", "season": "all", "vat_inclusive": false,
-         "source": {"url": "https://www.dailydispatch.co.za/news/2025-11-27-new-tariff-proposals-spark-fresh-backlash/", "publisher": "Daily Dispatch", "class": "news"},
-         "notes": "Draft-stage; verify against AnnexureF-BCMMtariffBook20March2026.pdf"},
-        {"component_type": "energy", "description": "Energy charges and block structure — pending 2026/27 tariff book", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+        {
+          "component_type": "fixed",
+          "description": "Basic monthly charge for prepaid domestic consumers (up from R424 in 2025/26) — DRAFT-STAGE figure",
+          "rate": 487.0,
+          "unit": "R/month",
+          "season": "all",
+          "vat_inclusive": false,
+          "source": {
+            "url": "https://www.dailydispatch.co.za/news/2025-11-27-new-tariff-proposals-spark-fresh-backlash/",
+            "publisher": "Daily Dispatch",
+            "class": "news"
+          },
+          "notes": "Draft-stage; verify against AnnexureF-BCMMtariffBook20March2026.pdf"
+        },
+        {
+          "component_type": "energy",
+          "description": "Energy charges and block structure — pending 2026/27 tariff book",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        }
       ],
       "rules": []
     },
@@ -42,7 +64,14 @@
       "eligibility": null,
       "notes": "All rates pending the 2026/27 tariff book (buffalocity.gov.za/tariffs.php).",
       "components": [
-        {"component_type": "energy", "description": "Energy charges — pending 2026/27 tariff book", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+        {
+          "component_type": "energy",
+          "description": "Energy charges — pending 2026/27 tariff book",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        }
       ],
       "rules": []
     }

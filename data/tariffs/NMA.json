@@ -8,11 +8,15 @@
   "approved_increase": {
     "financial_year": "2026/27",
     "avg_increase_pct": 10.95,
-    "status": "approved",
+    "status": "implemented",
     "effective_from": "2026-07-01",
     "effective_to": "2027-06-30",
-    "source": {"url": "https://www.dailymaverick.co.za/article/2026-06-02-nelson-mandela-bay-residents-face-steep-rate-increases-amid-service-delivery-failures/", "publisher": "Daily Maverick", "class": "news"},
-    "notes": "Average 10.95% electricity increase in the budget passed early June 2026 (also The Herald, 31 May 2026). CONFLICT: national NERSA-approval roundups reported 10.09% (and one 9.81%) for NMB. Earlier: 9% proposed Feb 2026; a 12.8% weighted-average was rejected by councillors in March 2026."
+    "source": {
+      "url": "https://www.dailymaverick.co.za/article/2026-06-02-nelson-mandela-bay-residents-face-steep-rate-increases-amid-service-delivery-failures/",
+      "publisher": "Daily Maverick",
+      "class": "news"
+    },
+    "notes": "Average 10.95% electricity increase confirmed in effect from 1 July 2026 by the metro's own post-1-July public notice (Ward 9 councillor: 'The approved average increases are: Electricity: 10.95%') and Daily Maverick (2 June 2026). CONFLICT RESOLVED (2026-07-05 recheck): The Citizen's 10.09% was literally the top of a quoted range ('between 8.63% and 10.09%'), i.e. a benchmark band, not a rival approved figure. Metro total revenue requirement 2026/27: R9.26bn."
   },
   "tariff_plans": [
     {
@@ -25,7 +29,14 @@
       "eligibility": "ATTP (Assistance to the Poor) programme provides the lifeline/indigent tariff.",
       "notes": "No 2026/27 component rates were obtainable from accessible sources; the 2026/27 NMBM tariff booklet (nelsonmandelabay.gov.za DataRepository) must be parsed. CAUTION: 'Basic Charge R219.90 / energy R2.8445-4.6923 per kWh' figures circulating in search results belong to mmlm.gov.za (a different municipality), NOT NMBM.",
       "components": [
-        {"component_type": "energy", "description": "Energy charges — pending 2026/27 NMBM tariff booklet", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+        {
+          "component_type": "energy",
+          "description": "Energy charges — pending 2026/27 NMBM tariff booklet",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        }
       ],
       "rules": []
     }

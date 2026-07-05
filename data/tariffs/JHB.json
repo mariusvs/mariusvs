@@ -10,7 +10,11 @@
     "avg_increase_pct": 8.63,
     "effective_from": "2026-07-01",
     "effective_to": "2027-06-30",
-    "source": {"url": "https://www.enca.com/news-top-stories/city-power-consumers-face-863-electricity-hike-new-tariffs-kick", "publisher": "eNCA", "class": "news"},
+    "source": {
+      "url": "https://www.enca.com/news-top-stories/city-power-consumers-face-863-electricity-hike-new-tariffs-kick",
+      "publisher": "eNCA",
+      "class": "news"
+    },
     "notes": "Average 8.63%, below the 8.76% Eskom/NERSA benchmark. Residential Prepaid High category average +8.71%; most other categories average +9.01%. Council approved the FY2026/27 schedule 30-31 March 2026."
   },
   "tariff_plans": [
@@ -24,14 +28,43 @@
       "eligibility": "Standard (non-indigent) prepaid residential customers.",
       "notes": "Category average increase +8.71%. Verified example bill: 450 kWh/month costs R1,559.79 (was R1,438.21). Exact 2026/27 block c/kWh rates pending official PDF (2025/26 Block 1 0-350 kWh was 266.45 c/kWh — do NOT use for 2026/27).",
       "components": [
-        {"component_type": "energy", "description": "Inclining-block energy charges — exact 2026/27 rates pending extraction from CoJ Approved Tariffs 2026/2027 PDF", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false,
-         "notes": "https://joburg.org.za/documents_/Documents/TARIFFS/Approved-Tariffs-20262027.pdf"},
-        {"component_type": "fixed", "description": "Monthly service charge", "rate": 70.0, "unit": "R/month", "season": "all", "vat_inclusive": false,
-         "source": {"url": "https://mosaichomes.co.za/insights/mosaic-insights-article-joburg-2026-tariff-hikes.php", "publisher": "Mosaic Home Services", "class": "news"},
-         "notes": "VAT treatment for 2026/27 not stated; 2025/26 equivalent was VAT-exclusive"},
-        {"component_type": "capacity", "description": "Monthly network capacity charge", "rate": 140.0, "unit": "R/month", "season": "all", "vat_inclusive": false,
-         "source": {"url": "https://mosaichomes.co.za/insights/mosaic-insights-article-joburg-2026-tariff-hikes.php", "publisher": "Mosaic Home Services", "class": "news"},
-         "notes": "CONFLICT: 2025/26 charge was R130 and City Power stated this charge was 'held flat' for this category — R140 needs verification against the official PDF"}
+        {
+          "component_type": "energy",
+          "description": "Inclining-block energy charges — exact 2026/27 rates pending extraction from CoJ Approved Tariffs 2026/2027 PDF",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false,
+          "notes": "https://joburg.org.za/documents_/Documents/TARIFFS/Approved-Tariffs-20262027.pdf"
+        },
+        {
+          "component_type": "fixed",
+          "description": "Monthly service charge",
+          "rate": 70.0,
+          "unit": "R/month",
+          "season": "all",
+          "vat_inclusive": false,
+          "source": {
+            "url": "https://mosaichomes.co.za/insights/mosaic-insights-article-joburg-2026-tariff-hikes.php",
+            "publisher": "Mosaic Home Services",
+            "class": "news"
+          },
+          "notes": "VAT treatment for 2026/27 not stated; 2025/26 equivalent was VAT-exclusive"
+        },
+        {
+          "component_type": "capacity",
+          "description": "Monthly network capacity charge",
+          "rate": 140.0,
+          "unit": "R/month",
+          "season": "all",
+          "vat_inclusive": false,
+          "source": {
+            "url": "https://mosaichomes.co.za/insights/mosaic-insights-article-joburg-2026-tariff-hikes.php",
+            "publisher": "Mosaic Home Services",
+            "class": "news"
+          },
+          "notes": "Resolution (recheck 2026-07-05): R140 confirmed by two independently written 1-2 July 2026 reports (IOL and newsnote, both quoting 'the R140 network capacity charge' and the R210 combined indigent exemption). 2025/26 charge was R130; the 'held flat' claim (Mosaic) described the proposal stage and gave no rand figure — R140 treated as the in-force 2026/27 charge pending the official PDF."
+        }
       ],
       "rules": []
     },
@@ -43,15 +76,44 @@
       "vat_treatment": "unknown",
       "verification": "partial",
       "eligibility": "Registered indigent customers (Expanded Social Package).",
-      "notes": "Verified example bill: 250 kWh/month costs R680.93 (was R624.65, +9.01%). Qualifying ESP households also receive 50-120 kWh free electricity per month.",
+      "notes": "Verified example bills: 250 kWh/month costs R680.93 (was R624.65, +9.01%); 374 kWh/month costs R1,033.26 (~R85 more). Qualifying ESP households also receive 50-120 kWh free electricity per month.",
       "components": [
-        {"component_type": "energy", "description": "Inclining-block energy charges — exact 2026/27 rates pending official PDF", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false},
-        {"component_type": "credit", "description": "Exempt from R70 service charge and R140 network capacity charge (saving up to R210/month)", "rate": 0.0, "unit": "R/month", "season": "all", "vat_inclusive": false,
-         "source": {"url": "https://www.businessday.co.za/news/2026-07-01-joburg-households-to-dig-deeper-as-863-electricity-tariff-hike-kicks-in-on-july-1/", "publisher": "Business Day", "class": "news"}}
+        {
+          "component_type": "energy",
+          "description": "Inclining-block energy charges — exact 2026/27 rates pending official PDF",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        },
+        {
+          "component_type": "credit",
+          "description": "Exempt from R70 service charge and R140 network capacity charge (saving up to R210/month)",
+          "rate": 0.0,
+          "unit": "R/month",
+          "season": "all",
+          "vat_inclusive": false,
+          "source": {
+            "url": "https://www.businessday.co.za/news/2026-07-01-joburg-households-to-dig-deeper-as-863-electricity-tariff-hike-kicks-in-on-july-1/",
+            "publisher": "Business Day",
+            "class": "news"
+          }
+        }
       ],
       "rules": [
-        {"rule_type": "free_basic", "description": "Qualifying Expanded Social Package households receive 50-120 kWh free electricity per month", "params": {"min_kwh": 50, "max_kwh": 120}},
-        {"rule_type": "eligibility", "description": "Must be a registered indigent / Expanded Social Package customer", "params": null}
+        {
+          "rule_type": "free_basic",
+          "description": "Qualifying Expanded Social Package households receive 50-120 kWh free electricity per month",
+          "params": {
+            "min_kwh": 50,
+            "max_kwh": 120
+          }
+        },
+        {
+          "rule_type": "eligibility",
+          "description": "Must be a registered indigent / Expanded Social Package customer",
+          "params": null
+        }
       ]
     },
     {
@@ -64,8 +126,22 @@
       "eligibility": "Post-paid residential customers.",
       "notes": "Network capacity charge held flat for 60A customers per City Power's approved 2026/27 proposal; exact 2026/27 rand values pending official PDF.",
       "components": [
-        {"component_type": "energy", "description": "Energy charges — exact 2026/27 rates pending official PDF", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false},
-        {"component_type": "capacity", "description": "Network capacity charge (held flat for 60A supplies) — exact value pending official PDF", "rate": null, "unit": "R/month", "season": "all", "vat_inclusive": false}
+        {
+          "component_type": "energy",
+          "description": "Energy charges — exact 2026/27 rates pending official PDF",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        },
+        {
+          "component_type": "capacity",
+          "description": "Network capacity charge (held flat for 60A supplies) — exact value pending official PDF",
+          "rate": null,
+          "unit": "R/month",
+          "season": "all",
+          "vat_inclusive": false
+        }
       ],
       "rules": []
     },
@@ -79,8 +155,22 @@
       "eligibility": null,
       "notes": "Category average increase +9.01%. Exact 2026/27 rates pending official PDF.",
       "components": [
-        {"component_type": "energy", "description": "Energy charges — pending official PDF", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false},
-        {"component_type": "demand", "description": "Demand charges — pending official PDF", "rate": null, "unit": "R/kVA", "season": "all", "vat_inclusive": false}
+        {
+          "component_type": "energy",
+          "description": "Energy charges — pending official PDF",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        },
+        {
+          "component_type": "demand",
+          "description": "Demand charges — pending official PDF",
+          "rate": null,
+          "unit": "R/kVA",
+          "season": "all",
+          "vat_inclusive": false
+        }
       ],
       "rules": []
     },
@@ -94,7 +184,14 @@
       "eligibility": null,
       "notes": "Category average increase +9.01%. Exact 2026/27 rates pending official PDF.",
       "components": [
-        {"component_type": "energy", "description": "Energy charges — pending official PDF", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+        {
+          "component_type": "energy",
+          "description": "Energy charges — pending official PDF",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        }
       ],
       "rules": []
     }

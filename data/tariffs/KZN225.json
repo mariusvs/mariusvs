@@ -8,11 +8,15 @@
   "approved_increase": {
     "financial_year": "2026/27",
     "avg_increase_pct": 9.26,
-    "status": "approved",
+    "status": "implemented",
     "effective_from": "2026-07-01",
     "effective_to": "2027-06-30",
-    "source": {"url": "https://witness.co.za/news/2026/05/29/msunduzi-tariff-hike/", "publisher": "The Witness", "class": "news"},
-    "notes": "Council approved 29 May 2026; municipality states NERSA approved its 9.26% application. Exceeds the Eskom bulk increase via a cost-plus infrastructure markup; the local Chamber of Business disputed the underlying cost-of-supply study."
+    "source": {
+      "url": "https://witness.co.za/news/2026/05/29/msunduzi-tariff-hike/",
+      "publisher": "The Witness",
+      "class": "news"
+    },
+    "notes": "Council approved 29 May 2026; in effect 1 July 2026. Recheck 2026-07-05: The Witness (26 June 2026) confirms NERSA 'considered its submission and subsequently approved its electricity tariffs' — 9.26% retail vs the 8.76% Eskom bulk increase to Msunduzi, via a cost-plus infrastructure markup; the local Chamber of Business disputes the cost-of-supply methodology."
   },
   "tariff_plans": [
     {
@@ -25,10 +29,24 @@
       "eligibility": null,
       "notes": "Exact 2026/27 c/kWh pending the Register of Tariffs and Charges.",
       "components": [
-        {"component_type": "energy", "description": "Domestic single-phase energy charge — pending 2026/27 register", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+        {
+          "component_type": "energy",
+          "description": "Domestic single-phase energy charge — pending 2026/27 register",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        }
       ],
       "rules": [
-        {"rule_type": "connection_limit", "description": "Single-phase supplies 20A to 80A", "params": {"min_amp": 20, "max_amp": 80}}
+        {
+          "rule_type": "connection_limit",
+          "description": "Single-phase supplies 20A to 80A",
+          "params": {
+            "min_amp": 20,
+            "max_amp": 80
+          }
+        }
       ]
     },
     {
@@ -41,7 +59,14 @@
       "eligibility": null,
       "notes": "Rates pending 2026/27 register.",
       "components": [
-        {"component_type": "energy", "description": "Commercial energy charge — pending 2026/27 register", "rate": null, "unit": "c/kWh", "season": "all", "vat_inclusive": false}
+        {
+          "component_type": "energy",
+          "description": "Commercial energy charge — pending 2026/27 register",
+          "rate": null,
+          "unit": "c/kWh",
+          "season": "all",
+          "vat_inclusive": false
+        }
       ],
       "rules": []
     }
