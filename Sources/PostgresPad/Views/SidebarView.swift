@@ -39,7 +39,12 @@ struct SidebarView: View {
         HStack(spacing: 8) {
             ServerBadgeView(server: server, size: 24)
             VStack(alignment: .leading, spacing: 1) {
-                Text(server.displayName)
+                HStack(spacing: 5) {
+                    Text(server.displayName)
+                    if server.isProduction {
+                        ProdTagView()
+                    }
+                }
                 Text("\(server.host):\(String(server.port))")
                     .font(.caption2)
                     .foregroundStyle(.secondary)

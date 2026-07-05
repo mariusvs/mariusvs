@@ -45,6 +45,12 @@ struct ServerFormView: View {
                     TextField("Host", text: $draft.host)
                     TextField("Port", text: $portText)
                     Toggle("Use TLS", isOn: $draft.useTLS)
+                    Toggle("Production database", isOn: $draft.isProduction)
+                    if draft.isProduction {
+                        Text("Console statements run inside a transaction and are never auto-committed — changes only persist when you click Commit.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
                 }
                 Section("Authentication") {
                     TextField("Username", text: $draft.username)
@@ -86,7 +92,7 @@ struct ServerFormView: View {
             }
             .padding(12)
         }
-        .frame(width: 440, height: 600)
+        .frame(width: 440, height: 640)
     }
 
     // MARK: - Logo pickers

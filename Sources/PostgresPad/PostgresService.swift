@@ -16,6 +16,9 @@ actor PostgresService {
     }
 
     private var connections: [ConnectionKey: PostgresConnection] = [:]
+    /// Keys with a transaction currently open (production no-auto-commit
+    /// mode, or an explicit user BEGIN).
+    private var openTransactions: Set<ConnectionKey> = []
     private var nextConnectionID = 0
     private let logger = Logger(label: "postgrespad.sql")
 
@@ -45,7 +48,16 @@ actor PostgresService {
         let statements = SQLScriptSplitter.split(script)
         guard !statements.isEmpty else { return [] }
 
+        let key = ConnectionKey(serverID: server.id, database: database)
         let connection = try await connection(for: server, database: database)
+
+        // Production servers never auto-commit: open an explicit transaction
+        // so nothing is persisted until the user commits.
+        if server.isProduction && !openTransactions.contains(key) {
+            try await runCommand("BEGIN", on: connection)
+            openTransactions.insert(key)
+        }
+
         var results: [QueryResult] = []
         for statement in statements {
             let start = Date()
@@ -68,14 +80,77 @@ actor PostgresService {
                 rows: rows,
                 duration: Date().timeIntervalSince(start)
             ))
+            updateTransactionState(after: statement, key: key)
         }
         return results
+    }
+
+    /// Whether the console has an uncommitted transaction on this target.
+    func isTransactionOpen(on server: ServerConfig, database: String) -> Bool {
+        openTransactions.contains(ConnectionKey(serverID: server.id, database: database))
+    }
+
+    func commitTransaction(on server: ServerConfig, database: String) async throws {
+        try await endTransaction(with: "COMMIT", server: server, database: database)
+    }
+
+    func rollbackTransaction(on server: ServerConfig, database: String) async throws {
+        try await endTransaction(with: "ROLLBACK", server: server, database: database)
+    }
+
+    private func endTransaction(with command: String, server: ServerConfig, database: String) async throws {
+        let key = ConnectionKey(serverID: server.id, database: database)
+        defer { openTransactions.remove(key) }
+        guard let connection = connections[key], !connection.isClosed else { return }
+        try await runCommand(command, on: connection)
+    }
+
+    /// Table and column names of the connected database, for editor
+    /// completions.
+    func schemaIdentifiers(on server: ServerConfig, database: String) async throws -> [String] {
+        let connection = try await connection(for: server, database: database)
+        let stream = try await connection.query(
+            """
+            SELECT table_name, column_name FROM information_schema.columns
+            WHERE table_schema NOT IN ('pg_catalog', 'information_schema')
+            """,
+            logger: logger
+        )
+        var identifiers = Set<String>()
+        for try await row in stream {
+            let cells = row.makeRandomAccess()
+            if let table = try? cells[0].decode(String.self) { identifiers.insert(table) }
+            if let column = try? cells[1].decode(String.self) { identifiers.insert(column) }
+        }
+        return identifiers.sorted()
+    }
+
+    private func runCommand(_ sql: String, on connection: PostgresConnection) async throws {
+        let stream = try await connection.query(PostgresQuery(unsafeSQL: sql), logger: logger)
+        for try await _ in stream {}
+    }
+
+    /// Keeps the transaction flag honest when the user types transaction
+    /// control statements themselves.
+    private func updateTransactionState(after statement: String, key: ConnectionKey) {
+        let firstWord = statement.uppercased()
+            .split(whereSeparator: { $0.isWhitespace })
+            .first.map(String.init) ?? ""
+        switch firstWord {
+        case "COMMIT", "ROLLBACK", "END", "ABORT":
+            openTransactions.remove(key)
+        case "BEGIN", "START":
+            openTransactions.insert(key)
+        default:
+            break
+        }
     }
 
     /// Closes every open connection to the given server.
     func disconnect(serverID: UUID) async {
         let keys = connections.keys.filter { $0.serverID == serverID }
         for key in keys {
+            openTransactions.remove(key)
             if let connection = connections.removeValue(forKey: key) {
                 try? await connection.close()
             }
@@ -89,7 +164,9 @@ actor PostgresService {
         if let existing = connections[key], !existing.isClosed {
             return existing
         }
+        // A dropped connection also dropped any transaction it carried.
         connections.removeValue(forKey: key)
+        openTransactions.remove(key)
 
         let tls: PostgresConnection.Configuration.TLS
         if server.useTLS {

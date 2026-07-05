@@ -27,6 +27,17 @@ on Apple Silicon (arm64) — no Electron, no web views.
 - Results grid handles arbitrary column sets, with type-aware rendering for
   text, integers, floats, numerics, booleans, UUIDs, timestamps and JSONB.
 - Connections are pooled per server + database and reused between queries.
+- Per-server logo badge (symbol + color) to tell connections apart at a
+  glance, shown in the sidebar and the console header.
+- **Production mode**: mark a server as production and its consoles never
+  auto-commit — statements run inside an explicit transaction (`PROD` tag
+  shown everywhere), and changes persist only when you click **Commit**.
+  **Roll Back** discards them.
+- **Export**: save the displayed result set as CSV or tab-delimited text
+  from the status bar.
+- **Intellisense**: as-you-type completions in the editor — SQL keywords and
+  functions plus live table/column names from the connected database
+  (Esc opens the popup manually).
 
 ## Requirements
 
@@ -58,6 +69,8 @@ minutes; subsequent builds are fast.
 1. Click **+** in the toolbar and register a server.
 2. Expand the server in the sidebar — it connects and lists its databases.
 3. Select a database, type SQL in the console, press **⌘↩** (or click Run).
+4. On production servers, use the **Commit** / **Roll Back** buttons in the
+   console header to finish the open transaction.
 
 ## Known limitations / roadmap
 

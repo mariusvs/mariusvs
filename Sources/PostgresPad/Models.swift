@@ -15,6 +15,9 @@ struct ServerConfig: Identifiable, Codable, Hashable, Sendable {
     /// SF Symbol and tint shown as the server's logo badge in the sidebar.
     var symbolName: String = "server.rack"
     var tintName: String = "blue"
+    /// Production servers never auto-commit: console statements run inside
+    /// an explicit transaction until the user commits or rolls back.
+    var isProduction: Bool = false
 
     var displayName: String {
         name.isEmpty ? "\(host):\(port)" : name
@@ -22,7 +25,7 @@ struct ServerConfig: Identifiable, Codable, Hashable, Sendable {
 
     enum CodingKeys: String, CodingKey {
         case id, name, host, port, username, password
-        case maintenanceDatabase, useTLS, symbolName, tintName
+        case maintenanceDatabase, useTLS, symbolName, tintName, isProduction
     }
 }
 
@@ -41,6 +44,7 @@ extension ServerConfig {
         useTLS = try container.decodeIfPresent(Bool.self, forKey: .useTLS) ?? false
         symbolName = try container.decodeIfPresent(String.self, forKey: .symbolName) ?? "server.rack"
         tintName = try container.decodeIfPresent(String.self, forKey: .tintName) ?? "blue"
+        isProduction = try container.decodeIfPresent(Bool.self, forKey: .isProduction) ?? false
     }
 }
 

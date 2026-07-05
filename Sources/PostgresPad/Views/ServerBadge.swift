@@ -59,3 +59,15 @@ struct ServerBadgeView: View {
         (ServerTint(rawValue: server.tintName) ?? .blue).color
     }
 }
+
+/// Small red capsule marking a production server wherever it appears.
+struct ProdTagView: View {
+    var body: some View {
+        Text("PROD")
+            .font(.system(size: 9, weight: .heavy))
+            .padding(.horizontal, 5)
+            .padding(.vertical, 1.5)
+            .foregroundStyle(.white)
+            .background(Capsule().fill(Color.red.gradient))
+    }
+}
